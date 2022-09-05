@@ -110,7 +110,7 @@
                     </span>
                     <span class="ml-3 ml-md-5 position-relative">
                         <span id="header-profile-toggle" class="pointer">
-                            <img class="header-avatar" src="{{ asset(auth()->user()->avatar['indexArray']['small']) }}" alt="no photo">
+                            <img class="header-avatar" src="{{ asset(auth()->user()->avatar) }}" alt="no photo">
                             <span class="header-username">{{ auth()->user()->fullname }}</span>
                     <i class="fas fa-angle-down"></i>
                     </span>

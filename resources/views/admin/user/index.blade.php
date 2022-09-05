@@ -38,7 +38,7 @@
                                                 <tr>
                                                     <th>#</th>
                                                     <th>Email</th>
-                                                    <th>Name</th>
+                                                    <th >Name</th>
                                                     <th>Fmily Name</th>
                                                     <th>Image</th>
                                                     <th>Status</th>
@@ -54,7 +54,7 @@
                                                     <td>{{ $user->email }}</td>
                                                     <td>{{ $user->first_name }}</td>
                                                     <td>{{ $user->last_name }}</td>
-                                                    <td><img src="{{ asset($user->avatar['indexArray']['small']) }}" style="width:6rem;" alt=""></td>
+                                                    <td><img src="{{ asset($user->avatar) }}" style="width:6rem;" alt=""></td>
                                                     <td><span class="@if($user->is_active == 1) text-success @else text-danger @endif">@if($user->is_active == 1) active @else in-active @endif</span></td>
 
                                                     <td style="width: 18rem; text-align: left;">

@@ -58,7 +58,7 @@
                                             <label for="email">Email</label>
                                         </div>
                                         <div class="form-label-group">
-                                            <input type="file" name="avatar" id="avatar" class="form-control" required>
+                                            <input type="file" name="avatar" id="avatar" class="form-control" >
                                             <label for="avatar">Image</label>
                                         </div>
                                         <div class="form-label-group">

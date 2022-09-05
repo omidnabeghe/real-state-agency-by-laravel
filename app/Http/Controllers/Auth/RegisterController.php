@@ -7,6 +7,7 @@ use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
@@ -40,7 +41,6 @@ class RegisterController extends Controller
     {
         $this->middleware('guest');
     }
-
     /**
      * Get a validator for an incoming registration request.
      *
@@ -54,6 +54,7 @@ class RegisterController extends Controller
             'last_name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'avatar'=>['image','mimes:png,jpg,jpeg,gif']
         ]);
     }
 
@@ -66,12 +67,28 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         $data['user_type'] = 'user';
+        $file = $data['avatar'] ?? null;
+        $destination=null;
+        $fileName=null;
+
+        if($file){
+            $name =$file->getClientOriginalName();
+            $destination = 'images' . DIRECTORY_SEPARATOR . 'user'.DIRECTORY_SEPARATOR.date('Y') . DIRECTORY_SEPARATOR . date('m') . DIRECTORY_SEPARATOR . date('d').DIRECTORY_SEPARATOR ;
+            $fileName  = $destination . $name;
+            if(!file_exists(public_path($name))){
+                $file->move($destination,$name);
+            }
+
+        }
+
+
         return User::create([
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'user_type' => $data['user_type'],
+            'avatar'=>$fileName,
 
         ]);
     }

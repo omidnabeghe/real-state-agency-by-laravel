@@ -34,7 +34,7 @@ class UserController extends Controller
                 $imageService->deleteDirectoryAndFiles($user->image['directory']);
             }
             $imageService->setExclusiveDirectory('images' . DIRECTORY_SEPARATOR . 'user');
-            $result = $imageService->createIndexAndSave($request->file('avatar'));
+            $result = $imageService->save($request->file('avatar'));
             if ($result === false) {
                 return redirect()->route('admin.user')->with('errorSweet', 'image upload fails');
             }

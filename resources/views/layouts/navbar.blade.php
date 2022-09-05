@@ -22,7 +22,7 @@
                 </li>
                 @else
                 <li class="nav-item cta"><a href="{{ route('login') }}" class="nav-link ml-lg-1 mr-lg-5"><span class="icon-user m-2"></span>Login</a></li>
-                <li class="nav-item cta cta-colored"><a href="" class="nav-link"><span class="icon-pencil m-2"></span>Register</a></li>
+                <li class="nav-item cta cta-colored"><a href="{{ route('register') }}" class="nav-link"><span class="icon-pencil m-2"></span>Register</a></li>
                 @endauth
                 <li class="nav-item cta cta-colored"><a href="{{ route('admin.home') }}" class="nav-link"><span class="icon-pencil m-2"></span>Admin</a></li>
 

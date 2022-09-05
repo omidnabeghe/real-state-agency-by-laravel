@@ -73,8 +73,8 @@
                                         </div>
 
                                         <div class="col-md-6">
-                                            <input type="password" name="password" id="password" class="form-control" placeholder="کلمه عبور" required>
-                                            <label for="password">کلمه عبور</label>
+                                            <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+                                            <label for="password">Password</label>
                                             @error('password')
                                             <span class="alert_required text-danger" role="alert">
                                                 <strong>{{ $message }}</strong></span>
@@ -84,7 +84,7 @@
                                         </div>
                                         <div class="col-md-6">
                                             <input type="password" name="password_confirmation" id="confirm_password" class="form-control" placeholder="Confirm Password" required>
-                                            <label for="confirm_password">تکرار کلمه عبور</label>
+                                            <label for="confirm_password">Confirm Password</label>
                                             @error('password_confirmation')
                                             <span class="alert_required text-danger" role="alert">
                                                 <strong>{{ $message }}</strong></span>
