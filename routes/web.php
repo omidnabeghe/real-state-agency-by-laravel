@@ -101,7 +101,7 @@ Route::prefix('admin')->group(function () {
 
 
 
-Auth::routes(['verify' => true]);
+Auth::routes();
 
 Route::namespace('/')->group(function () {
     Route::get('/', [HomeController::class, 'home'])->name('home');
