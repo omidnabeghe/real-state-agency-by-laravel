@@ -16,7 +16,7 @@
                     <form class=" " action="{{ route('logout') }}" method="post">
                         @csrf
 
-                        <button type="submit" class="btn btn-success btn-lg"><span class="icon-user m-2"></span>{{ auth()->user()->fullname }}</button>
+                        <button type="submit" class="btn btn-success btn-lg"><span class="icon-user m-2 text-danger"> LOGOUT from</span>  {{ auth()->user()->fullname }}</button>
                     </form>
 
                 </li>
